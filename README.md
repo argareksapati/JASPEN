@@ -1,6 +1,6 @@
 # Jaspen Website
 
-### Website Jasa Pentester & Security Audit Berbasis Bukti
+### Website Jasa Pentester & Security Audit
 
 <p align="center">
   <img src="assets/logofix.png" alt="Jaspen Logo" width="420">

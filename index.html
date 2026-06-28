@@ -382,15 +382,20 @@
           </div>
           <div class="recognition-table__row">
             <strong>curl/libcurl</strong>
-            <span>CVE/advisory credit</span>
+            <span>CVE/advisory + disclosed H1 proof</span>
             <span>Public advisory</span>
+          </div>
+          <div class="recognition-table__row">
+            <strong>arkadiyt-projects</strong>
+            <span>Disclosed H1 report</span>
+            <span>Public report proof</span>
           </div>
         </div>
       </div>
 
       <div class="proof-gallery">
         <article class="proof-shot reveal tilt-card">
-          <img src="assets/proofs/google-bug-hunters-profile.webp" alt="Screenshot sanitized profil Google Bug Hunters yang menampilkan username argareksapati dan jumlah awards" loading="lazy" decoding="async">
+          <img src="assets/proofs/google-bug-hunters-profile-full.png" alt="Screenshot profil Google Bug Hunters yang menampilkan username argareksapati, leaderboard rank, public reports, dan jumlah awards" loading="lazy" decoding="async">
           <div class="proof-shot__copy">
             <span>Google Bug Hunters profile</span>
             <h3>Profil publik dengan 4 awards</h3>
@@ -400,22 +405,32 @@
         </article>
 
         <article class="proof-shot reveal tilt-card">
-          <img src="assets/proofs/google-reward-proof-sanitized.webp" alt="Screenshot sanitized Google Bug Hunters yang menampilkan status fixed dan reward decided tanpa detail report teknis" loading="lazy" decoding="async">
+          <img src="assets/proofs/google-reward-proof-full.png" alt="Screenshot Google Bug Hunters yang menampilkan status fixed dan reward decided" loading="lazy" decoding="async">
           <div class="proof-shot__copy">
             <span>Google reward proof</span>
             <h3>Reward decided dan status fixed</h3>
-            <p>Screenshot sanitized ini menunjukkan adanya reward dan status fixed tanpa menampilkan isi report teknis.</p>
+            <p>Screenshot ini menunjukkan status fixed dan reward decided pada Google Bug Hunters sebagai bukti publik tambahan dari report yang tervalidasi.</p>
             <a href="https://bughunters.google.com/profile/e2461b18-a672-4e62-bc32-f86f1fdf8427" target="_blank" rel="noopener noreferrer">Buka URL profil publik</a>
           </div>
         </article>
 
         <article class="proof-shot reveal tilt-card">
-          <img src="assets/proofs/anthropic-bounty-sanitized.webp" alt="Screenshot sanitized Anthropic bug bounty yang menunjukkan pengakuan bounty tanpa detail report teknis" loading="lazy" decoding="async">
+          <img src="assets/proofs/anthropic-bounty-3700-full.png" alt="Screenshot Anthropic yang menunjukkan bounty sebesar 3700 dolar untuk report yang divalidasi" loading="lazy" decoding="async">
           <div class="proof-shot__copy">
             <span>Anthropic bug bounty</span>
             <h3>Triaged claude-code-action image TOCTOU bypass</h3>
-            <p>Proof ini merujuk pada temuan bahwa image issue atau PR body masih bisa diambil dari versi live setelah trigger, sehingga konten yang sudah diedit dapat masuk ke konteks Claude meski body snapshot sudah dipin.</p>
+            <p>Proof ini menunjukkan reward `$3,700` dari Anthropic untuk temuan TOCTOU bypass pada `claude-code-action`, termasuk pengakuan bounty langsung pada timeline report.</p>
             <span class="proof-shot__meta">Triaged report, $3,700 bounty</span>
+          </div>
+        </article>
+
+        <article class="proof-shot reveal tilt-card">
+          <img src="assets/proofs/anthropic-bounty-100-full.png" alt="Screenshot Anthropic yang menunjukkan bounty sebesar 100 dolar untuk report yang divalidasi" loading="lazy" decoding="async">
+          <div class="proof-shot__copy">
+            <span>Anthropic bug bounty</span>
+            <h3>Additional validated bounty proof</h3>
+            <p>Screenshot ini menunjukkan proof tambahan bahwa report lain di Anthropic juga mendapatkan bounty `$100`, memperkuat rekam jejak validasi teknis dan responsible disclosure.</p>
+            <span class="proof-shot__meta">Validated report, $100 bounty</span>
           </div>
         </article>
 
@@ -426,6 +441,56 @@
             <h3>CVE dan advisory credit publik</h3>
             <p>Contoh bukti advisory untuk project curl/libcurl yang sudah public disclosure dan dapat dipakai untuk memverifikasi credit open-source.</p>
             <a href="https://curl.se/docs/CVE-2026-8458.html" target="_blank" rel="noopener noreferrer">Buka URL advisory curl</a>
+          </div>
+        </article>
+
+        <article class="proof-shot reveal tilt-card">
+          <img src="assets/proofs/h1-curl-3697719.png" alt="Screenshot HackerOne report 3697719 untuk curl terkait CVE-2026-7168 cross-proxy Digest auth state leak" loading="lazy" decoding="async">
+          <div class="proof-shot__copy">
+            <span>curl HackerOne proof</span>
+            <h3>Report #3697719: CVE-2026-7168</h3>
+            <p>Disclosed HackerOne report untuk temuan cross-proxy Digest auth state leak pada curl/libcurl, ditampilkan sebagai bukti publik tambahan selain advisory resmi.</p>
+            <a href="https://hackerone.com/bugs?subject=user&report_id=3697719&view=custom&substates%5B%5D=editing&substates%5B%5D=new&substates%5B%5D=needs-more-info&substates%5B%5D=pending-program-review&substates%5B%5D=triaged&substates%5B%5D=retesting&substates%5B%5D=duplicate&substates%5B%5D=informative&substates%5B%5D=resolved&substates%5B%5D=not-applicable&substates%5B%5D=spam&reported_to_team=&text_query=curl&program_states%5B%5D=2&program_states%5B%5D=3&program_states%5B%5D=4&program_states%5B%5D=5&sort_type=pg_search_rank&sort_direction=descending&limit=25&page=1" target="_blank" rel="noopener noreferrer">Buka report HackerOne</a>
+          </div>
+        </article>
+
+        <article class="proof-shot reveal tilt-card">
+          <img src="assets/proofs/h1-curl-3721183.png" alt="Screenshot HackerOne report 3721183 untuk curl terkait CVE-2026-8458 wrong reuse for different services" loading="lazy" decoding="async">
+          <div class="proof-shot__copy">
+            <span>curl HackerOne proof</span>
+            <h3>Report #3721183: CVE-2026-8458</h3>
+            <p>Proof publik HackerOne untuk wrong reuse for different services pada curl/libcurl, melengkapi jejak advisory dan disclosure yang bisa diverifikasi langsung.</p>
+            <a href="https://hackerone.com/bugs?subject=user&report_id=3721183&view=custom&substates%5B%5D=editing&substates%5B%5D=new&substates%5B%5D=needs-more-info&substates%5B%5D=pending-program-review&substates%5B%5D=triaged&substates%5B%5D=retesting&substates%5B%5D=duplicate&substates%5B%5D=informative&substates%5B%5D=resolved&substates%5B%5D=not-applicable&substates%5B%5D=spam&reported_to_team=&text_query=curl&program_states%5B%5D=2&program_states%5B%5D=3&program_states%5B%5D=4&program_states%5B%5D=5&sort_type=pg_search_rank&sort_direction=descending&limit=25&page=1" target="_blank" rel="noopener noreferrer">Buka report HackerOne</a>
+          </div>
+        </article>
+
+        <article class="proof-shot reveal tilt-card">
+          <img src="assets/proofs/h1-curl-3677759.png" alt="Screenshot HackerOne report 3677759 untuk curl terkait CVE-2026-6429 netrc credential leak with reused proxy connection" loading="lazy" decoding="async">
+          <div class="proof-shot__copy">
+            <span>curl HackerOne proof</span>
+            <h3>Report #3677759: CVE-2026-6429</h3>
+            <p>Disclosed report HackerOne yang menunjukkan netrc credential leak pada reused proxy connection, relevan sebagai bukti kualitas reproduksi dan analisis root cause.</p>
+            <a href="https://hackerone.com/bugs?subject=user&report_id=3677759&view=custom&substates%5B%5D=editing&substates%5B%5D=new&substates%5B%5D=needs-more-info&substates%5B%5D=pending-program-review&substates%5B%5D=triaged&substates%5B%5D=retesting&substates%5B%5D=duplicate&substates%5B%5D=informative&substates%5B%5D=resolved&substates%5B%5D=not-applicable&substates%5B%5D=spam&reported_to_team=&text_query=curl&program_states%5B%5D=2&program_states%5B%5D=3&program_states%5B%5D=4&program_states%5B%5D=5&sort_type=pg_search_rank&sort_direction=descending&limit=25&page=1" target="_blank" rel="noopener noreferrer">Buka report HackerOne</a>
+          </div>
+        </article>
+
+        <article class="proof-shot reveal tilt-card">
+          <img src="assets/proofs/h1-curl-3671818.png" alt="Screenshot HackerOne report 3671818 untuk curl terkait CVE-2026-6276 stale custom cookie host causes cookie leak" loading="lazy" decoding="async">
+          <div class="proof-shot__copy">
+            <span>curl HackerOne proof</span>
+            <h3>Report #3671818: CVE-2026-6276</h3>
+            <p>Bukti disclosed report untuk stale custom cookie host yang menyebabkan cookie leak pada curl/libcurl, ditampilkan sebagai validasi publik tambahan dari riset keamanan yang dilakukan.</p>
+            <a href="https://hackerone.com/bugs?subject=user&report_id=3671818&view=custom&substates%5B%5D=editing&substates%5B%5D=new&substates%5B%5D=needs-more-info&substates%5B%5D=pending-program-review&substates%5B%5D=triaged&substates%5B%5D=retesting&substates%5B%5D=duplicate&substates%5B%5D=informative&substates%5B%5D=resolved&substates%5B%5D=not-applicable&substates%5B%5D=spam&reported_to_team=&text_query=curl&program_states%5B%5D=2&program_states%5B%5D=3&program_states%5B%5D=4&program_states%5B%5D=5&sort_type=pg_search_rank&sort_direction=descending&limit=25&page=1" target="_blank" rel="noopener noreferrer">Buka report HackerOne</a>
+          </div>
+        </article>
+
+        <article class="proof-shot reveal tilt-card">
+          <img src="assets/proofs/h1-arkadiyt-3642600.png" alt="Screenshot HackerOne report 3642600 untuk arkadiyt-projects terkait authorization header leak via cross-host redirect" loading="lazy" decoding="async">
+          <div class="proof-shot__copy">
+            <span>HackerOne disclosed proof</span>
+            <h3>Report #3642600: authorization header leak</h3>
+            <p>Proof publik dari report disclosed di HackerOne pada arkadiyt-projects terkait authorization header leak melalui cross-host redirect yang berdampak pada credential theft dan unauthorized access.</p>
+            <a href="https://hackerone.com/bugs?subject=user&report_id=3642600&view=custom&substates%5B%5D=resolved&reported_to_team=&text_query=&program_states%5B%5D=2&program_states%5B%5D=3&program_states%5B%5D=4&program_states%5B%5D=5&sort_type=latest_activity&sort_direction=descending&limit=25&page=1" target="_blank" rel="noopener noreferrer">Buka report HackerOne</a>
           </div>
         </article>
       </div>

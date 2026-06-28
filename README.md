@@ -23,9 +23,6 @@ Website ini berfungsi sebagai landing page resmi Jaspen untuk memperkenalkan lay
 * [Disclaimer Legal](#disclaimer-legal)
 * [Layanan](#layanan)
 * [Output Pentest](#output-pentest)
-* [Fitur Website](#fitur-website)
-* [Struktur Project](#struktur-project)
-* [Cara Menjalankan](#cara-menjalankan)
 * [Kontak](#kontak)
 * [Catatan Keamanan](#catatan-keamanan)
 * [License](#license)
@@ -140,91 +137,6 @@ Output yang dapat diberikan:
 
 ---
 
-## Fitur Website
-
-Website ini memuat beberapa section utama:
-
-* Hero section untuk positioning jasa pentest
-* Penjelasan layanan
-* Output pentest
-* Paket dan scope engagement
-* Prestasi dan validasi publik
-* Recognition dari program keamanan
-* Cara kerja audit
-* Keamanan dan etika pengujian
-* Sample report section
-* FAQ
-* Form konsultasi scope pentest
-* Kontak email dan WhatsApp
-* Privacy Policy
-* Terms of Engagement
-
----
-
-## Tech Stack
-
-Website ini dibuat sebagai static website menggunakan:
-
-* HTML
-* CSS
-* JavaScript
-* Static assets
-
-Website tidak membutuhkan backend khusus untuk tampilan utama.
-
-Form kontak pada versi ini diarahkan untuk membuka draft email atau kontak WhatsApp agar request scope dapat langsung dikirim ke pemilik layanan.
-
----
-
-## Struktur Project
-
-```text
-jaspen_website/
-├── index.html
-├── style.css
-├── script.js
-├── favicon.ico
-├── assets/
-│   ├── og-image.png
-│   └── proofs/
-│       ├── anthropic-bounty-sanitized.webp
-│       ├── google-bughunters-profile.webp
-│       ├── google-reward-proof.webp
-│       └── curl-advisory-proof.webp
-└── README.md
-```
-
----
-
-## Cara Menjalankan
-
-Clone repository:
-
-```bash
-git clone https://github.com/areksaxyz/jaspen-website.git
-cd jaspen-website
-```
-
-Buka langsung file berikut di browser:
-
-```text
-index.html
-```
-
-Atau jalankan local server sederhana:
-
-```bash
-python3 -m http.server 8000
-```
-
-Kemudian buka:
-
-```text
-http://localhost:8000
-```
-
----
-
 ## Kontak
 
 Untuk konsultasi scope pentest atau audit keamanan:
@@ -245,7 +157,7 @@ Pengujian keamanan hanya dilakukan pada target yang memiliki otorisasi sah dan s
 
 ## License
 
-Copyright © 2026 Jaspen.
+Copyright (c) 2026 Jaspen.
 
 Seluruh konten, desain, proof, dan aset visual pada repository ini digunakan untuk website resmi Jaspen.
 

@@ -1643,6 +1643,7 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 28px;
+  max-width: 420px;
 }
 
 .results-links a {
@@ -1666,8 +1667,10 @@ h3 {
 .trust-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 34px;
-  padding: 0 12px;
+  min-width: 170px;
+  padding: 0 14px;
   border-radius: 8px;
   border: 1px solid rgba(201, 173, 255, 0.22);
   color: var(--muted);

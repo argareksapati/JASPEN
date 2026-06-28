@@ -11,7 +11,7 @@
 ![Focus](https://img.shields.io/badge/focus-pentest%20%7C%20source--code%20audit%20%7C%20CI%2FCD-purple)
 ![License](https://img.shields.io/badge/license-proprietary-red)
 
-Jaspen adalah website layanan jasa pentester dan security audit berbasis bukti untuk membantu bisnis menemukan celah keamanan pada web application, API, source code, dan workflow CI/CD.
+Jaspen adalah website layanan jasa pentester dan security audit untuk membantu bisnis menemukan celah keamanan pada web application, API, source code, dan workflow CI/CD.
 
 Website ini berfungsi sebagai landing page resmi Jaspen untuk memperkenalkan layanan, menjelaskan output pentest, menampilkan validasi publik, menyediakan sample report, dan menerima request konsultasi scope pentest.
 

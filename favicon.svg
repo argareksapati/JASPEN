@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="28" fill="#160f29"/>
+  <circle cx="64" cy="64" r="48" fill="#b98cff" opacity="0.16"/>
+  <path d="M30 30h68v68H30z" rx="14" fill="none" stroke="#b98cff" stroke-width="6"/>
+  <text x="64" y="78" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" fill="#f6f3ff">JN</text>
+</svg>

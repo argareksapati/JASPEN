@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jaspen - Jasa Pentester &amp; Security Review</title>
+  <meta name="description" content="Jaspen adalah layanan jasa pentester, web/API penetration testing, source-code security review, dan CI/CD security review oleh Muhamad Arga Reksapati." />
+  <meta property="og:title" content="Jaspen - Jasa Pentester & Security Review">
+  <meta property="og:description" content="Pentest web/API, source-code review, dan CI/CD security review berbasis bukti.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="loader" aria-hidden="true">
+    <div class="loader__ring"></div>
+    <span>Menyiapkan perlindungan...</span>
+  </div>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <span class="scroll-progress__bar"></span>
+  </div>
+
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Jaspen home">
+      <span class="brand-logo" aria-hidden="true">
+        <span class="brand-logo__orbit"></span>
+        <span class="brand-logo__orbit brand-logo__orbit--reverse"></span>
+        <span class="brand-logo__shield">
+          <span class="brand-logo__scan"></span>
+          <span class="brand-logo__letters">JN</span>
+        </span>
+        <span class="brand-logo__spark brand-logo__spark--one"></span>
+        <span class="brand-logo__spark brand-logo__spark--two"></span>
+      </span>
+      <span class="brand__text">
+        <strong>Jaspen</strong>
+        <small>jasa pentester</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav-menu" aria-label="Navigasi utama">
+      <a href="#services">Layanan</a>
+      <a href="#deliverables">Output</a>
+      <a href="#why">Keunggulan</a>
+      <a href="#proof">Prestasi</a>
+      <a href="#sample-report">Sample report</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+
+    <a class="header-cta magnetic" href="#contact">Konsultasi Scope Pentest</a>
+  </header>
+
+  <main>
+    <section class="hero section-padding" aria-labelledby="hero-title">
+      <div class="hero__content reveal">
+        <p class="eyebrow">JASPEN - Jasa Pentester</p>
+        <h1 id="hero-title">Pentest &amp; Review Keamanan</h1>
+        <p class="hero__lead">
+          Jaspen membantu bisnis menemukan celah keamanan pada web app, API,
+          source code, dan workflow CI/CD dengan pendekatan manual, PoC aman,
+          serta rekomendasi perbaikan yang jelas.
+        </p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn--primary magnetic">Konsultasi Scope Pentest</a>
+          <a href="#sample-report" class="btn btn--ghost">Lihat Sample Report</a>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal" data-depth="0.08">
+        <div class="visual-card visual-card--hacker tilt-card">
+          <picture>
+            <source srcset="assets/cyber-mascot-panel.webp" type="image/webp">
+            <img class="hero-mascot-panel" src="assets/cyber-mascot-panel.png" alt="Maskot cybersecurity Jaspen dengan topeng futuristik ungu" fetchpriority="high" decoding="async">
+          </picture>
+          <div class="mascot-vignette" aria-hidden="true"></div>
+          <div class="scan-line" aria-hidden="true"></div>
+          <div class="data-sweep data-sweep--one" aria-hidden="true"></div>
+          <div class="data-sweep data-sweep--two" aria-hidden="true"></div>
+        </div>
+
+        <a class="round-cta round-cta--hotspot magnetic" href="#contact" aria-label="Konsultasi Scope Pentest">
+          <span>Scope</span>
+          <strong>pentest</strong>
+        </a>
+      </div>
+
+      <div class="hero__metrics reveal">
+        <article class="metric-card tilt-card">
+          <span class="metric-card__label">Founder</span>
+          <strong>Muhamad Arga Reksapati</strong>
+          <p>security researcher, bug bounty hunter, dan pentester</p>
+        </article>
+        <article class="metric-card tilt-card">
+          <span class="metric-card__label">Prestasi</span>
+          <strong>curl + Google + Anthropic</strong>
+          <p>rekam jejak advisory credit, bug bounty, dan temuan triaged yang memperkuat kredibilitas teknis</p>
+        </article>
+        <article class="metric-card tilt-card">
+          <span class="metric-card__label">Focus</span>
+          <strong>Web/API</strong>
+          <p>pentest, source-code review, dan CI/CD</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="why section-padding" id="why" aria-labelledby="why-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Kenapa pilih Jaspen?</p>
+        <h2 id="why-title">Review yang fokus pada risiko nyata, bukan laporan kosmetik.</h2>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-card reveal tilt-card">
+          <span>01</span>
+          <h3>Evidence-first</h3>
+          <p>Setiap temuan disertai bukti teknis, langkah reproduksi, dampak, dan jalur perbaikan.</p>
+        </article>
+        <article class="why-card reveal tilt-card">
+          <span>02</span>
+          <h3>Manual testing</h3>
+          <p>Pengujian tidak berhenti di scanner. Logika bisnis, akses kontrol, dan trust boundary ditelusuri manual.</p>
+        </article>
+        <article class="why-card reveal tilt-card">
+          <span>03</span>
+          <h3>Source-aware</h3>
+          <p>Review mampu masuk ke level kode, alur data, validasi, state, cache, dan sink yang sensitif.</p>
+        </article>
+        <article class="why-card reveal tilt-card">
+          <span>04</span>
+          <h3>Remediation clear</h3>
+          <p>Laporan dibuat praktis: prioritas risiko, root cause, rekomendasi fix, dan retest setelah patch.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="showcase section-padding" aria-label="Security visual highlights">
+      <article class="showcase-card reveal tilt-card">
+        <div class="cosmic-art" aria-hidden="true">
+          <span class="planet planet--one"></span>
+          <span class="planet planet--two"></span>
+          <span class="ring ring--one"></span>
+          <span class="ring ring--two"></span>
+        </div>
+        <div class="showcase-card__copy">
+          <span>Threat modeling</span>
+          <p>Petakan attacker input, validasi, permission check, dan sensitive sink sebelum bug dipakai penyerang.</p>
+        </div>
+      </article>
+
+      <article class="showcase-card showcase-card--lock reveal tilt-card">
+        <div class="lock-3d" aria-hidden="true">
+          <div class="lock-3d__shackle"></div>
+          <div class="lock-3d__body">
+            <span></span>
+          </div>
+        </div>
+        <div class="showcase-badge">Security research proof</div>
+      </article>
+    </section>
+
+    <section class="services section-padding" id="services" aria-labelledby="services-title">
+      <div class="section-heading section-heading--center reveal">
+        <p class="eyebrow">Layanan</p>
+        <h2 id="services-title">Jasa pentest dari scope awal sampai laporan siap ditindaklanjuti.</h2>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal tilt-card">
+          <div class="service-icon icon-audit"></div>
+          <h3>Web &amp; API Pentest</h3>
+          <p>Pengujian OWASP-style untuk autentikasi, otorisasi, IDOR, injection, upload, session, dan logic flaw.</p>
+          <a href="#contact">Konsultasi Scope Pentest</a>
+        </article>
+        <article class="service-card reveal tilt-card">
+          <div class="service-icon icon-business"></div>
+          <h3>Source Code Review</h3>
+          <p>Review kode manual untuk menemukan bug yang sering lolos dari scanner dan automated testing.</p>
+          <a href="#contact">Konsultasi Scope Pentest</a>
+        </article>
+        <article class="service-card service-card--featured reveal tilt-card">
+          <div class="service-icon icon-fingerprint"></div>
+          <h3>Bug Bounty Style Review</h3>
+          <p>Assessment berbasis impact: hanya temuan yang reproducible, reachable, dan punya risiko nyata.</p>
+          <a href="#contact">Konsultasi Scope Pentest</a>
+        </article>
+        <article class="service-card reveal tilt-card">
+          <div class="service-icon icon-training"></div>
+          <h3>CI/CD &amp; Supply Chain</h3>
+          <p>Review workflow GitHub Actions, secrets, dependency path, artifact signing, dan release pipeline.</p>
+          <a href="#contact">Konsultasi Scope Pentest</a>
+        </article>
+        <article class="service-card reveal tilt-card">
+          <div class="service-icon icon-support"></div>
+          <h3>Report &amp; Retest</h3>
+          <p>Laporan teknis berisi severity, PoC aman, root cause, rekomendasi fix, dan validasi ulang patch.</p>
+          <a href="#contact">Konsultasi Scope Pentest</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="deliverables section-padding" id="deliverables" aria-labelledby="deliverables-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Output Pentest</p>
+        <h2 id="deliverables-title">Yang klien dapatkan bukan hanya testing, tetapi laporan yang bisa ditindaklanjuti.</h2>
+      </div>
+
+      <div class="deliverables-grid">
+        <article class="deliverable-card reveal tilt-card">
+          <h3>Executive summary</h3>
+          <p>Ringkasan risiko utama, dampak bisnis, dan prioritas penanganan untuk manajemen dan stakeholder.</p>
+        </article>
+        <article class="deliverable-card reveal tilt-card">
+          <h3>Technical report</h3>
+          <p>Finding teknis lengkap untuk developer: severity, langkah reproduksi, PoC aman, dan rekomendasi fix.</p>
+        </article>
+        <article class="deliverable-card reveal tilt-card">
+          <h3>Evidence bundle</h3>
+          <p>Screenshot, request-response, code path, atau bukti lain yang relevan untuk mempermudah verifikasi internal.</p>
+        </article>
+        <article class="deliverable-card reveal tilt-card">
+          <h3>Root cause analysis</h3>
+          <p>Analisis akar masalah agar perbaikan tidak hanya menutup gejala, tetapi juga sumber risikonya.</p>
+        </article>
+        <article class="deliverable-card reveal tilt-card">
+          <h3>Remediation priority</h3>
+          <p>Severity, prioritas perbaikan, dan konteks exploitability supaya tim tahu issue mana yang harus ditutup duluan.</p>
+        </article>
+        <article class="deliverable-card reveal tilt-card">
+          <h3>Retest report</h3>
+          <p>Validasi ulang setelah patch untuk memastikan finding benar-benar tertutup sesuai scope yang disepakati.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="scope section-padding" id="scope" aria-labelledby="scope-title">
+      <div class="section-heading section-heading--center reveal">
+        <p class="eyebrow">Paket &amp; Scope</p>
+        <h2 id="scope-title">Pilih model engagement yang paling sesuai dengan target review Anda.</h2>
+      </div>
+
+      <div class="scope-grid">
+        <article class="scope-card reveal tilt-card">
+          <span>Cocok untuk</span>
+          <h3>Web/API Pentest</h3>
+          <p>Startup, SaaS, internal dashboard, dan aplikasi yang menangani autentikasi, role, atau data sensitif.</p>
+          <strong>Output:</strong>
+          <p>Report teknis lengkap + retest.</p>
+        </article>
+        <article class="scope-card reveal tilt-card">
+          <span>Cocok untuk</span>
+          <h3>Source Code Review</h3>
+          <p>Repository GitHub atau private codebase yang butuh verifikasi manual pada code path sensitif.</p>
+          <strong>Output:</strong>
+          <p>Finding berbasis code path, sink, dan root cause.</p>
+        </article>
+        <article class="scope-card reveal tilt-card">
+          <span>Cocok untuk</span>
+          <h3>CI/CD Review</h3>
+          <p>GitHub Actions, secret handling, release workflow, dependency path, dan artifact trust chain.</p>
+          <strong>Output:</strong>
+          <p>Supply-chain risk report dan rekomendasi hardening.</p>
+        </article>
+        <article class="scope-card reveal tilt-card">
+          <span>Cocok untuk</span>
+          <h3>Bug Bounty Style Review</h3>
+          <p>Tim yang ingin assessment impact-focused dengan fokus pada temuan yang reproducible dan bernilai tinggi.</p>
+          <strong>Output:</strong>
+          <p>High-signal vulnerability report.</p>
+        </article>
+      </div>
+
+      <p class="scope-note reveal">
+        Harga mengikuti scope, kompleksitas aplikasi, jumlah endpoint, kebutuhan akses source code, environment pengujian, dan retest setelah patch.
+      </p>
+    </section>
+
+    <section class="proof section-padding" id="proof" aria-labelledby="proof-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Prestasi</p>
+        <h2 id="proof-title">Bukti publik yang bisa diverifikasi.</h2>
+      </div>
+
+      <div class="proof-grid">
+        <article class="proof-card reveal tilt-card">
+          <span class="proof-card__tag">01</span>
+          <h3>5 public curl CVE credits</h3>
+          <p>
+            Berhasil mendapatkan lima CVE pada project curl/libcurl dari riset
+            keamanan yang berfokus pada auth state, credential leakage, dan handle reuse.
+          </p>
+          <a href="https://curl.se/docs/CVE-2026-8458.html" target="_blank" rel="noopener noreferrer">Lihat advisory curl</a>
+        </article>
+
+        <article class="proof-card reveal tilt-card">
+          <span class="proof-card__tag">02</span>
+          <h3>Google Bug Hunters reward</h3>
+          <p>
+            Profil Google Bug Hunters menunjukkan 4 awards, termasuk reward
+            untuk report yang ditandai fixed dan dapat dipakai sebagai bukti
+            tambahan atas kualitas responsible disclosure.
+          </p>
+          <a href="https://bughunters.google.com/profile/e2461b18-a672-4e62-bc32-f86f1fdf8427" target="_blank" rel="noopener noreferrer">Lihat profil Google Bug Hunters</a>
+        </article>
+
+        <article class="proof-card reveal tilt-card">
+          <span class="proof-card__tag">03</span>
+          <h3>Anthropic triaged TOCTOU finding</h3>
+          <p>
+            Pernah menemukan bypass TOCTOU pada `claude-code-action`, di mana
+            image issue/PR body tetap di-resolve dari `body_html` live meski
+            `originalBody` sudah dipin dari webhook snapshot.
+          </p>
+          <a href="#recognition">Lihat ringkasan proof Anthropic</a>
+        </article>
+
+        <article class="proof-card reveal tilt-card">
+          <span class="proof-card__tag">04</span>
+          <h3>Jejak publik founder</h3>
+          <p>
+            Profil publik tersedia melalui GitHub, portfolio riset keamanan, dan
+            advisory credit open-source untuk membantu proses validasi sebelum engagement.
+          </p>
+          <a href="https://github.com/argareksapati" target="_blank" rel="noopener noreferrer">Lihat GitHub profile</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="recognition section-padding" id="recognition" aria-labelledby="recognition-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Recognition &amp; Security Research Proof</p>
+        <h2 id="recognition-title">Pengakuan program keamanan ditampilkan secara aman, proporsional, dan tetap bisa membangun trust.</h2>
+      </div>
+
+      <div class="recognition-grid">
+        <article class="recognition-card reveal tilt-card">
+          <span class="recognition-card__tag">Anthropic Bug Bounty</span>
+          <h3>TOCTOU bypass pada claude-code-action</h3>
+          <p>
+            Pernah melaporkan celah pada `claude-code-action` yang melemahkan
+            proteksi TOCTOU untuk issue/PR body. Body teks tetap memakai snapshot
+            webhook, tetapi image justru diunduh dari `body_html` live setelah trigger.
+          </p>
+          <p>
+            Temuan ini divalidasi Anthropic, masuk status `Triaged` dengan severity
+            `High (7.7)`, lalu diberi bounty `$3,700` karena PoC berhasil menunjukkan
+            bahwa konten gambar hasil edit pasca-trigger tetap bisa memengaruhi output Claude.
+          </p>
+        </article>
+
+        <div class="recognition-table reveal">
+          <div class="recognition-table__head">
+            <span>Program</span>
+            <span>Bukti</span>
+            <span>Status</span>
+          </div>
+          <div class="recognition-table__row">
+            <strong>Anthropic</strong>
+            <span>Triaged TOCTOU finding</span>
+            <span>$3,700 bounty</span>
+          </div>
+          <div class="recognition-table__row">
+            <strong>Google Bug Hunters</strong>
+            <span>4 awards + reward proof</span>
+            <span>Public/profile proof</span>
+          </div>
+          <div class="recognition-table__row">
+            <strong>curl/libcurl</strong>
+            <span>CVE/advisory credit</span>
+            <span>Public advisory</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-gallery">
+        <article class="proof-shot reveal tilt-card">
+          <img src="assets/proofs/google-bug-hunters-profile.webp" alt="Screenshot sanitized profil Google Bug Hunters yang menampilkan username argareksapati dan jumlah awards" loading="lazy" decoding="async">
+          <div class="proof-shot__copy">
+            <span>Google Bug Hunters profile</span>
+            <h3>Profil publik dengan 4 awards</h3>
+            <p>Dipakai sebagai proof publik untuk username, jumlah awards, dan jejak partisipasi di Google Bug Hunters.</p>
+            <a href="https://bughunters.google.com/profile/e2461b18-a672-4e62-bc32-f86f1fdf8427" target="_blank" rel="noopener noreferrer">Buka URL profil</a>
+          </div>
+        </article>
+
+        <article class="proof-shot reveal tilt-card">
+          <img src="assets/proofs/google-reward-proof-sanitized.webp" alt="Screenshot sanitized Google Bug Hunters yang menampilkan status fixed dan reward decided tanpa detail report teknis" loading="lazy" decoding="async">
+          <div class="proof-shot__copy">
+            <span>Google reward proof</span>
+            <h3>Reward decided dan status fixed</h3>
+            <p>Screenshot sanitized ini menunjukkan adanya reward dan status fixed tanpa menampilkan isi report teknis.</p>
+            <a href="https://bughunters.google.com/profile/e2461b18-a672-4e62-bc32-f86f1fdf8427" target="_blank" rel="noopener noreferrer">Buka URL profil publik</a>
+          </div>
+        </article>
+
+        <article class="proof-shot reveal tilt-card">
+          <img src="assets/proofs/anthropic-bounty-sanitized.webp" alt="Screenshot sanitized Anthropic bug bounty yang menunjukkan pengakuan bounty tanpa detail report teknis" loading="lazy" decoding="async">
+          <div class="proof-shot__copy">
+            <span>Anthropic bug bounty</span>
+            <h3>Triaged claude-code-action image TOCTOU bypass</h3>
+            <p>Proof ini merujuk pada temuan bahwa image issue atau PR body masih bisa diambil dari versi live setelah trigger, sehingga konten yang sudah diedit dapat masuk ke konteks Claude meski body snapshot sudah dipin.</p>
+            <span class="proof-shot__meta">Triaged report, $3,700 bounty</span>
+          </div>
+        </article>
+
+        <article class="proof-shot reveal tilt-card">
+          <img src="assets/proofs/curl-cve-public-report.webp" alt="Screenshot public disclosed curl/libcurl report yang menampilkan CVE dan advisory credit" loading="lazy" decoding="async">
+          <div class="proof-shot__copy">
+            <span>curl/libcurl advisory proof</span>
+            <h3>CVE dan advisory credit publik</h3>
+            <p>Contoh bukti advisory untuk project curl/libcurl yang sudah public disclosure dan dapat dipakai untuk memverifikasi credit open-source.</p>
+            <a href="https://curl.se/docs/CVE-2026-8458.html" target="_blank" rel="noopener noreferrer">Buka URL advisory curl</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="process section-padding" aria-labelledby="process-title">
+      <div class="section-heading section-heading--center reveal">
+        <p class="eyebrow">Cara kerja</p>
+        <h2 id="process-title">Alur pentest yang jelas dari scope awal sampai retest.</h2>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card reveal tilt-card">
+          <span>01</span>
+          <h3>Scope &amp; threat model</h3>
+          <p>Petakan target, boundary, role, entry point, trust assumption, dan impact yang paling relevan untuk bisnis Anda.</p>
+        </article>
+        <article class="process-card reveal tilt-card">
+          <span>02</span>
+          <h3>Source-guided testing</h3>
+          <p>Pengujian manual dipadukan dengan code review, endpoint mapping, dan eksperimen kecil untuk memverifikasi bug nyata.</p>
+        </article>
+        <article class="process-card reveal tilt-card">
+          <span>03</span>
+          <h3>Evidence &amp; remediation</h3>
+          <p>Setiap finding disusun dengan severity, langkah reproduksi, dampak, root cause, dan rekomendasi fix yang bisa ditindaklanjuti.</p>
+        </article>
+        <article class="process-card reveal tilt-card">
+          <span>04</span>
+          <h3>Retest after patch</h3>
+          <p>Perbaikan dapat divalidasi ulang untuk memastikan issue benar-benar tertutup dan tidak berpindah ke jalur lain.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="results section-padding" id="results" aria-labelledby="results-title">
+      <div class="results__stats reveal">
+        <p class="eyebrow">Validasi Publik</p>
+        <h2 id="results-title">Trust layer yang bisa dicek sebelum Anda mengirim scope.</h2>
+        <div class="counter-list">
+          <div>
+            <strong class="counter" data-target="5">0</strong>
+            <p>public curl CVE credits</p>
+          </div>
+          <div>
+            <strong class="counter" data-target="4">0</strong>
+            <p>Google Bug Hunters awards</p>
+          </div>
+          <div>
+            <strong class="counter" data-target="5">0</strong>
+            <p>public validation links</p>
+          </div>
+        </div>
+        <div class="results-links">
+          <a href="https://portofolio-argareksapati.vercel.app/" target="_blank" rel="noopener noreferrer">Lihat Portfolio</a>
+          <a href="https://github.com/argareksapati" target="_blank" rel="noopener noreferrer">GitHub argareksapati</a>
+          <a href="https://bughunters.google.com/profile/e2461b18-a672-4e62-bc32-f86f1fdf8427" target="_blank" rel="noopener noreferrer">Google Bug Hunters</a>
+          <a href="https://www.linkedin.com/in/arga-reksapati-695a67323/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://curl.se/docs/CVE-2026-8458.html" target="_blank" rel="noopener noreferrer">curl advisory</a>
+        </div>
+        <p class="results-note">Link validasi mencakup portfolio, GitHub, Google Bug Hunters, LinkedIn, dan advisory curl yang sudah public disclosure.</p>
+      </div>
+      <div class="results__visual reveal tilt-card">
+        <canvas id="mountainCanvas" width="720" height="420" aria-label="Grafik animasi security research"></canvas>
+      </div>
+    </section>
+
+    <section class="insights section-padding" id="insights" aria-labelledby="insights-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Cocok Untuk</p>
+        <h2 id="insights-title">Model engagement ini paling relevan untuk tim yang butuh review yang actionable.</h2>
+      </div>
+
+      <div class="insights-grid">
+        <article class="insight-card reveal tilt-card">
+          <div class="insight-art insight-art--one"></div>
+          <p>Startup launch</p>
+          <h3>Startup yang akan launch aplikasi dan ingin mengurangi risiko sebelum go-live</h3>
+          <a href="#contact">Konsultasi Scope Pentest</a>
+        </article>
+        <article class="insight-card reveal tilt-card">
+          <div class="insight-art insight-art--two"></div>
+          <p>SaaS &amp; internal app</p>
+          <h3>Produk SaaS atau dashboard internal yang menangani autentikasi, role, dan data user</h3>
+          <a href="#contact">Konsultasi Scope Pentest</a>
+        </article>
+        <article class="insight-card reveal tilt-card">
+          <div class="insight-art insight-art--three"></div>
+          <p>Engineering team</p>
+          <h3>Tim engineering yang butuh second opinion untuk source code, API, atau patch validation</h3>
+          <a href="#contact">Konsultasi Scope Pentest</a>
+        </article>
+        <article class="insight-card reveal tilt-card">
+          <div class="insight-art insight-art--four"></div>
+          <p>Supply chain</p>
+          <h3>Perusahaan yang ingin review GitHub Actions, secret exposure, dependency risk, dan release pipeline</h3>
+          <a href="#contact">Konsultasi Scope Pentest</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="trust section-padding" id="trust" aria-labelledby="trust-title">
+      <div class="section-heading section-heading--center reveal">
+        <p class="eyebrow">Keamanan &amp; Etika</p>
+        <h2 id="trust-title">Pengujian dilakukan dengan kontrol, otorisasi, dan batasan yang jelas.</h2>
+      </div>
+
+      <div class="trust-grid">
+        <article class="trust-card reveal tilt-card">
+          <h3>Izin tertulis &amp; scope</h3>
+          <p>Pengujian hanya dilakukan setelah ada otorisasi tertulis dan ruang lingkup yang disepakati bersama.</p>
+        </article>
+        <article class="trust-card reveal tilt-card">
+          <h3>NDA support</h3>
+          <p>Mendukung NDA dan pembatasan akses sesuai kebutuhan agar informasi sensitif tetap terlindungi.</p>
+        </article>
+        <article class="trust-card reveal tilt-card">
+          <h3>Safe PoC</h3>
+          <p>Tidak melakukan destructive testing tanpa persetujuan. PoC dibuat aman, terkontrol, dan proporsional.</p>
+        </article>
+        <article class="trust-card reveal tilt-card">
+          <h3>Data minimization</h3>
+          <p>Tidak mengambil data sensitif melebihi kebutuhan bukti. Semua validasi mengikuti batasan yang disetujui.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sample-report section-padding" id="sample-report" aria-labelledby="sample-report-title">
+      <div class="sample-report__panel reveal tilt-card">
+        <div class="sample-report__copy">
+          <p class="eyebrow">Sample Report</p>
+          <h2 id="sample-report-title">Bantu calon klien menilai kualitas output sebelum mulai engagement.</h2>
+          <p>
+            Sample report sanitized ini dapat memuat executive summary, scope, finding,
+            severity, impact, reproduction steps, evidence, root cause, recommendation,
+            dan retest status.
+          </p>
+          <div class="sample-report__actions">
+            <a href="#contact" class="btn btn--primary magnetic">Konsultasi Scope Pentest</a>
+            <a href="#contact" class="btn btn--ghost">Request Sample Report</a>
+          </div>
+        </div>
+        <div class="sample-report__list">
+          <div><strong>01</strong><span>Summary &amp; scope</span></div>
+          <div><strong>02</strong><span>Severity &amp; impact</span></div>
+          <div><strong>03</strong><span>Reproduction steps</span></div>
+          <div><strong>04</strong><span>Evidence &amp; request-response</span></div>
+          <div><strong>05</strong><span>Root cause &amp; recommendation</span></div>
+          <div><strong>06</strong><span>Retest status</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq section-padding" id="faq" aria-labelledby="faq-title">
+      <div class="section-heading reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title">Pertanyaan yang biasanya muncul sebelum scope dikirim.</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>Berapa lama proses pentest?</summary>
+          <p>Tergantung scope, jumlah fitur, endpoint, role, dan kedalaman review yang dibutuhkan.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Apakah bisa review source code private?</summary>
+          <p>Bisa, dengan akses terbatas sesuai kebutuhan review dan NDA bila diperlukan.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Apakah testing aman untuk production?</summary>
+          <p>Testing dilakukan secara terkontrol sesuai scope, batasan, dan approval yang sudah disepakati.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Apakah termasuk retest?</summary>
+          <p>Retest dapat dilakukan setelah patch untuk memastikan issue sudah tertutup dan tidak muncul lagi pada jalur yang sama.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Apakah menerima project kecil?</summary>
+          <p>Bisa, selama scope, target, dan otorisasi pengujian dijelaskan dengan jelas sejak awal.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="contact section-padding" id="contact" aria-labelledby="contact-title">
+      <div class="contact__copy reveal">
+        <p class="eyebrow">Request</p>
+        <h2 id="contact-title">Diskusikan scope pentest dan target keamanan yang ingin diuji.</h2>
+        <p>Ceritakan aplikasi, API, repository, atau pipeline yang perlu diuji. Jaspen akan bantu menyusun scope awal, metode pengujian, kebutuhan akses, NDA, dan output laporan yang dibutuhkan.</p>
+        <ul class="contact-points">
+          <li>Web application pentest dan API assessment</li>
+          <li>Source-code review untuk auth, data flow, dan trust boundary</li>
+          <li>CI/CD, secret exposure, dependency, dan supply-chain review</li>
+          <li>Retest untuk validasi patch setelah perbaikan</li>
+          <li>Pengujian hanya dilakukan untuk target yang memiliki otorisasi sah</li>
+        </ul>
+        <div class="contact-direct" aria-label="Kontak langsung Jaspen">
+          <a class="btn btn--ghost" href="mailto:m.argareksapati21@gmail.com">Email Jaspen</a>
+          <a class="btn btn--primary magnetic" href="https://wa.me/6281818266692" target="_blank" rel="noopener noreferrer">Chat WhatsApp</a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" autocomplete="on">
+        <label>
+          <span>Nama perusahaan / organisasi</span>
+          <input type="text" name="company" placeholder="Nama perusahaan atau organisasi" required>
+        </label>
+        <label>
+          <span>Nama PIC</span>
+          <input type="text" name="name" placeholder="Nama penanggung jawab" required>
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="nama@email.com" required>
+        </label>
+        <label>
+          <span>Nomor WhatsApp</span>
+          <input type="tel" name="phone" placeholder="+62 ...">
+        </label>
+        <label>
+          <span>Target yang ingin diuji</span>
+          <select name="target" required>
+            <option value="">Pilih target</option>
+            <option>Web application</option>
+            <option>API</option>
+            <option>Source code</option>
+            <option>CI/CD pipeline</option>
+            <option>Bug bounty style review</option>
+          </select>
+        </label>
+        <label>
+          <span>URL aplikasi / repo / environment</span>
+          <input type="text" name="target_url" placeholder="https://app.example.com atau link repo">
+        </label>
+        <label>
+          <span>Status aplikasi</span>
+          <select name="environment">
+            <option value="">Pilih status</option>
+            <option>Development</option>
+            <option>Staging</option>
+            <option>Production</option>
+          </select>
+        </label>
+        <label>
+          <span>Apakah ada source code access?</span>
+          <select name="source_access">
+            <option value="">Pilih opsi</option>
+            <option>Ya, full access</option>
+            <option>Ya, limited access</option>
+            <option>Tidak ada akses source code</option>
+          </select>
+        </label>
+        <label>
+          <span>Deadline / urgency</span>
+          <input type="text" name="deadline" placeholder="Contoh: butuh kickoff minggu ini">
+        </label>
+        <label>
+          <span>Butuh NDA?</span>
+          <select name="nda">
+            <option value="">Pilih opsi</option>
+            <option>Ya</option>
+            <option>Tidak</option>
+          </select>
+        </label>
+        <label>
+          <span>Detail kebutuhan</span>
+          <textarea name="message" rows="5" placeholder="Jelaskan target, role, endpoint penting, concern utama, dan output yang diharapkan"></textarea>
+        </label>
+        <label class="checkbox-field">
+          <input type="checkbox" name="authorization" required>
+          <span>Saya memiliki otorisasi untuk meminta pengujian keamanan pada target ini.</span>
+        </label>
+        <button class="btn btn--primary magnetic" type="submit">Konsultasi Scope Pentest</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand reveal">
+      <span class="brand-logo brand-logo--footer" aria-hidden="true">
+        <span class="brand-logo__orbit"></span>
+        <span class="brand-logo__orbit brand-logo__orbit--reverse"></span>
+        <span class="brand-logo__shield">
+          <span class="brand-logo__scan"></span>
+          <span class="brand-logo__letters">JN</span>
+        </span>
+        <span class="brand-logo__spark brand-logo__spark--one"></span>
+        <span class="brand-logo__spark brand-logo__spark--two"></span>
+      </span>
+      <div class="footer-brand__copy">
+        <span class="footer-brand__text">Jaspen</span>
+        <p>Security review, pentest, source-code review, dan CI/CD assessment oleh Muhamad Arga Reksapati.</p>
+      </div>
+    </div>
+
+    <div class="footer-columns reveal">
+      <div>
+        <h3>Jaspen</h3>
+        <a href="#services">Layanan</a>
+        <a href="#deliverables">Output pentest</a>
+        <a href="#sample-report">Sample report</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div>
+        <h3>Validasi publik</h3>
+        <a href="https://github.com/argareksapati" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://bughunters.google.com/profile/e2461b18-a672-4e62-bc32-f86f1fdf8427" target="_blank" rel="noopener noreferrer">Google Bug Hunters</a>
+        <a href="https://www.linkedin.com/in/arga-reksapati-695a67323/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://curl.se/docs/CVE-2026-8458.html" target="_blank" rel="noopener noreferrer">curl advisory</a>
+        <a href="https://portofolio-argareksapati.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+      </div>
+      <div>
+        <h3>Kontak</h3>
+        <a href="mailto:m.argareksapati21@gmail.com">m.argareksapati21@gmail.com</a>
+        <a href="https://wa.me/6281818266692" target="_blank" rel="noopener noreferrer">WhatsApp +62 818-1826-6692</a>
+        <a href="#contact">Request review</a>
+      </div>
+      <div>
+        <h3>Legal</h3>
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#terms">Terms of Engagement</a>
+      </div>
+    </div>
+
+    <div class="footer-legal reveal">
+      <section class="legal-card" id="privacy-policy" aria-labelledby="privacy-title">
+        <h3 id="privacy-title">Privacy Policy</h3>
+        <p>Informasi yang dikirim melalui form seperti nama, email, WhatsApp, organisasi, dan kebutuhan review hanya digunakan untuk meninjau request, menyusun scope, dan komunikasi lanjutan terkait engagement keamanan.</p>
+      </section>
+      <section class="legal-card" id="terms" aria-labelledby="terms-title">
+        <h3 id="terms-title">Terms of Engagement</h3>
+        <p>Pengujian hanya dilakukan untuk target yang memiliki otorisasi sah, sesuai scope tertulis, dengan batasan testing yang disepakati, termasuk NDA dan retest bila dibutuhkan.</p>
+      </section>
+    </div>
+
+    <p class="footer-note reveal">© 2026 Jaspen. Security review, pentest, source-code review, and CI/CD assessment by Muhamad Arga Reksapati.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

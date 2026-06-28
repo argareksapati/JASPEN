@@ -2,7 +2,9 @@
 
 ### Website Jasa Pentester & Security Audit Berbasis Bukti
 
-![Jaspen Logo](assets/logofix.png)
+<p align="center">
+  <img src="assets/logofix.png" alt="Jaspen Logo" width="420">
+</p>
 
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Type](https://img.shields.io/badge/type-static%20website-blue)
@@ -24,7 +26,6 @@ Website ini berfungsi sebagai landing page resmi Jaspen untuk memperkenalkan lay
 * [Fitur Website](#fitur-website)
 * [Struktur Project](#struktur-project)
 * [Cara Menjalankan](#cara-menjalankan)
-* [Deployment](#deployment)
 * [Kontak](#kontak)
 * [Catatan Keamanan](#catatan-keamanan)
 * [License](#license)
@@ -221,44 +222,6 @@ Kemudian buka:
 ```text
 http://localhost:8000
 ```
-
----
-
-## Deployment
-
-Website ini dapat dideploy ke layanan static hosting seperti:
-
-* GitHub Pages
-* Netlify
-* Vercel
-* Cloudflare Pages
-
-### Deployment dengan GitHub Pages
-
-1. Buka repository di GitHub
-2. Masuk ke menu `Settings`
-3. Pilih menu `Pages`
-4. Pilih branch `main`
-5. Pilih folder root
-6. Simpan konfigurasi
-7. Tunggu sampai GitHub Pages memberikan URL website
-
----
-
-## Environment Production Checklist
-
-Sebelum deploy production, pastikan:
-
-* Tidak ada screenshot private mentah yang ikut ter-upload
-* Proof image sudah sanitized
-* Tidak ada report ID private yang terbuka
-* Tidak ada token, API key, atau secret di source code
-* Link WhatsApp dan email sudah benar
-* External link memakai `noopener noreferrer`
-* Metadata Open Graph sudah sesuai
-* Favicon sudah tersedia
-* Form kontak sudah diuji
-* Halaman legal sudah tersedia
 
 ---
 

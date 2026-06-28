@@ -15,6 +15,8 @@ Jaspen adalah website layanan jasa pentester dan security audit berbasis bukti u
 
 Website ini berfungsi sebagai landing page resmi Jaspen untuk memperkenalkan layanan, menjelaskan output pentest, menampilkan validasi publik, menyediakan sample report, dan menerima request konsultasi scope pentest.
 
+Live website: https://jaspen-pentest.vercel.app
+
 ---
 
 ## Daftar Isi
@@ -144,6 +146,7 @@ Untuk konsultasi scope pentest atau audit keamanan:
 * Email: [m.argareksapati21@gmail.com](mailto:m.argareksapati21@gmail.com)
 * WhatsApp: 6281818266692
 * GitHub: https://github.com/areksaxyz
+* Website: https://jaspen-pentest.vercel.app
 
 ---
 

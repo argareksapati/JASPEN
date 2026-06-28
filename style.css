@@ -1182,8 +1182,7 @@ h3 {
   font-size: 14px;
 }
 
-.scope-note,
-.results-note {
+.scope-note {
   max-width: 760px;
   margin: 24px auto 0;
   color: var(--muted);
@@ -1664,8 +1663,25 @@ h3 {
   background: rgba(185, 140, 255, .16);
 }
 
-.results-note {
-  margin-top: 24px;
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 173, 255, 0.22);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all .24s ease;
+  background: rgba(29, 22, 42, 0.4);
+}
+
+.trust-badge:hover {
+  color: var(--violet-3);
+  border-color: rgba(201, 173, 255, 0.42);
+  background: rgba(159, 109, 255, 0.08);
 }
 
 .results__visual {
